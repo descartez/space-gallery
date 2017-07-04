@@ -14,12 +14,27 @@ class App extends React.Component {
       subtitle: 'by Amanda Nelson',
       tileSize: 0.25,
       trayHeight: 1.2,
-      selectedImage: "#spaceCorgi"
+      selectedImage: "#spaceCorgi",
+      images: [
+        {
+          id:"spaceBunny1",
+          url: "https://ucarecdn.com/c6c09887-00a1-4d38-be37-ac1f71551f98/"
+        },
+        {
+          id:"spaceBunny2",
+          url: "https://ucarecdn.com/e09f73e5-5c60-4628-9272-2253c2af8637/"
+        },
+        {
+          id:"spaceCorgi",
+          url: "https://ucarecdn.com/b4409aeb-c472-414c-a901-bb5df19343ed/"
+        }
+      ]
     };
   }
 
-  changeImage = () => {
-    console.log("entity entered!")
+  changeImage = (event) => {
+    console.log(event);
+    this.setState({selectedImage: "#spaceBunny2"})
   }
 
   render () {
@@ -30,12 +45,10 @@ class App extends React.Component {
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg"/>
 
           // art textures
-          <img id="spaceBunny1" src="https://ucarecdn.com/c6c09887-00a1-4d38-be37-ac1f71551f98/"/>
-          <img id="spaceBunny2" src="https://ucarecdn.com/e09f73e5-5c60-4628-9272-2253c2af8637/"/>
-          <img id="spaceCorgi" src="https://ucarecdn.com/b4409aeb-c472-414c-a901-bb5df19343ed/"/>
-          <img id="elizabeth" src="https://ucarecdn.com/f12f3f80-014e-4483-ac4d-bfa9b0d1f812/"/>
-          <img id="classyPheasant" src="https://ucarecdn.com/4743ae78-82f7-4122-8d1f-bb8113c9de2f/"/>
-          <img id="dots" src="https://ucarecdn.com/a1895871-999e-41b5-889d-fa534c8aa343/"/>
+          {this.state.images.map((image) => {
+              return <img id={image.id} src={image.url}/>
+            })
+          }
 
       </a-assets>
 
@@ -43,30 +56,32 @@ class App extends React.Component {
           <Entity primitive="a-light" type="ambient" color="#445451"/>
           <Entity primitive="a-light" type="point" intensity=".7" position="2 4 5"/>
           <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
+
           <Entity text={{value: this.state.title, align: 'left'}} position={{x: -0.5, y: 2, z: -1}} />
-          <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1}} />
+          <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1.5}} />
 
           <Entity
-            geometry={{primitive: "plane", width: this.state.tileSize + 1.2, height: this.state.tileSize + 1.2}}
-            material="src: #spaceCorgi"
-            position={{x: 0.5, y: 2, z: -2}} />
+            geometry={{primitive: "plane", width: this.state.tileSize + 2, height: this.state.tileSize + 2}}
+            material={{src: this.state.selectedImage}}
+            position={{x: 0.5, y: 2, z: -3}} />
+
 
           <Entity
             events={{mouseenter: this.changeImage}}
             geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
-            material="src: #spaceBunny1"
+            material={{src: "#spaceBunny1"}}
             position={{x: -0.5, y: this.state.trayHeight, z: -1}} />
 
           <Entity
             events={{mouseenter: this.changeImage}}
             geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
-            material="src: #spaceBunny2"
+            material={{src: "#spaceBunny2"}}
             position={{x: 0, y: this.state.trayHeight, z: -1}} />
 
           <Entity
             events={{mouseenter: this.changeImage}}
             geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
-            material="src: #spaceCorgi"
+            material={{src: "#spaceCorgi"}}
             position={{x: 0.5, y: this.state.trayHeight, z: -1}} />
 
 
