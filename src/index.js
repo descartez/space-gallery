@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       title: 'Animals in Space',
       subtitle: 'by Amanda Nelson',
+      aboutMe: "Amanda Nelson is an artist and illustrator, based in Southern California. When she's not making art she can be found attending Corgi Beach Days and petting other peoples' dogs. \n\n She is available for illustration, portraiture, and design work.",
       xTileSize: 0.3,
       yTileSize: 0.25,
       trayHeight: 1.2,
@@ -61,7 +62,7 @@ class App extends React.Component {
           <Entity text={{value: this.state.title, align: 'left'}} position={{x: -0.5, y: 2, z: -1}} />
           <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1.5}} />
 
-          <Entity text={{value: "Amanda Nelson is an artist an illustrator, based in Southern California. When she's not making art in Monrovia, she can be found attending Corgi Beach Days. \n\n She is available for illustration, portraiture, and design work."}}
+          <Entity text={{value: this.state.aboutMe}}
             position={{x: 1.4, y: 1.5, z: -1}}
             rotation={{x: 0, y: -40, z: 0}}/>
 
