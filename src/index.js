@@ -57,7 +57,8 @@ class App extends React.Component {
           <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
           <Entity primitive="a-light" type="ambient" color="#445451"/>
           <Entity primitive="a-light" type="point" intensity=".7" position="2 4 5"/>
-          <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
+          <Entity primitive="a-sky" height="2048" radius="30" color="black" theta-length="90" width="2048"/>
+          <Entity particle-system={{preset: 'dust', particleCount: 2000, color: "white"}}/>
 
           <Entity text={{value: this.state.title, align: 'left'}} position={{x: -0.5, y: 2, z: -1}} />
           <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1.5}} />
