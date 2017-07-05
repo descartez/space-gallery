@@ -11,36 +11,38 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-scripts": "0.9.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages -d build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ngokevin/aframe-react-boilerplate.git"
-  },
-  "keywords": [
-    "aframe",
-    "react",
-    "vr",
-    "boilerplate",
-    "a-frame",
-    "mozvr",
-    "reactvr",
-    "aframe-react",
-    "webvr"
-  ],
-  "author": "Kevin Ngo <kngo@mozilla.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ngokevin/aframe-react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/ngokevin/aframe-react-boilerplate#readme",
-  "devDependencies": {
-    "gh-pages": "^0.12.0"
-  }
-}
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject",
+      "publish": "npm run build && gh-pages -d build",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ngokevin/aframe-react-boilerplate.git"
+        },
+        "keywords": [
+        "aframe",
+        "react",
+        "vr",
+        "boilerplate",
+        "a-frame",
+        "mozvr",
+        "reactvr",
+        "aframe-react",
+        "webvr"
+        ],
+        "author": "Kevin Ngo <kngo@mozilla.com>",
+        "license": "MIT",
+        "bugs": {
+          "url": "https://github.com/ngokevin/aframe-react-boilerplate/issues"
+          },
+          "homepage": "https://descartez.github.io/space-gallery",
+          "devDependencies": {
+            "gh-pages": "^0.12.0"
+          }
+        }
