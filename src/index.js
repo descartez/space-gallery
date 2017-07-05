@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       title: 'Animals in Space',
       subtitle: 'by Amanda Nelson',
-      tileSize: 0.25,
+      xTileSize: 0.3,
+      yTileSize: 0.25,
       trayHeight: 1.2,
       selectedImage: "#spaceCorgi",
       images: [
@@ -32,9 +33,9 @@ class App extends React.Component {
     };
   }
 
-  changeImage = (event) => {
-    console.log(event);
-    this.setState({selectedImage: "#spaceBunny2"})
+  changeImage = (image) => {
+    console.log(image);
+    this.setState({selectedImage: `#${image}`})
   }
 
   render () {
@@ -59,28 +60,41 @@ class App extends React.Component {
 
           <Entity text={{value: this.state.title, align: 'left'}} position={{x: -0.5, y: 2, z: -1}} />
           <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1.5}} />
+          <Entity text={{value: "Amanda Nelson is an artist an illustrator, based in Southern California. When she's not making art in Monrovia, she can be found attending Corgi Beach Days. \n\n She is available for illustration, portraiture, and design work."}} position={{x: 2, y: 2, z: -1.5}} />
+
+
 
           <Entity
-            geometry={{primitive: "plane", width: this.state.tileSize + 2, height: this.state.tileSize + 2}}
+            geometry={{primitive: "plane"}}
+            scale={{x: 3, y: 2}}
             material={{src: this.state.selectedImage}}
             position={{x: 0.5, y: 2, z: -3}} />
 
 
           <Entity
-            events={{mouseenter: this.changeImage}}
-            geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
+            events={{mouseenter: () => {
+              this.changeImage("spaceBunny1")
+            }}}
+            geometry={{primitive: "plane"}}
+            scale={{x: this.state.xTileSize, y: this.state.yTileSize}}
             material={{src: "#spaceBunny1"}}
             position={{x: -0.5, y: this.state.trayHeight, z: -1}} />
 
           <Entity
-            events={{mouseenter: this.changeImage}}
-            geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
+            events={{mouseenter: () => {
+              this.changeImage("spaceBunny2")
+            }}}
+            geometry={{primitive: "plane"}}
             material={{src: "#spaceBunny2"}}
+            scale={{x: this.state.xTileSize, y: this.state.yTileSize}}
             position={{x: 0, y: this.state.trayHeight, z: -1}} />
 
           <Entity
-            events={{mouseenter: this.changeImage}}
-            geometry={{primitive: "plane", width: this.state.tileSize, height: this.state.tileSize}}
+            events={{mouseenter: () => {
+              this.changeImage("spaceCorgi")
+            }}}
+            geometry={{primitive: "plane"}}
+            scale={{x: this.state.xTileSize, y: this.state.yTileSize}}
             material={{src: "#spaceCorgi"}}
             position={{x: 0.5, y: this.state.trayHeight, z: -1}} />
 
