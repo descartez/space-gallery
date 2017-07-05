@@ -60,7 +60,10 @@ class App extends React.Component {
 
           <Entity text={{value: this.state.title, align: 'left'}} position={{x: -0.5, y: 2, z: -1}} />
           <Entity text={{value: this.state.subtitle, align: 'left'}} position={{x: -0.5, y: 1.9, z: -1.5}} />
-          <Entity text={{value: "Amanda Nelson is an artist an illustrator, based in Southern California. When she's not making art in Monrovia, she can be found attending Corgi Beach Days. \n\n She is available for illustration, portraiture, and design work."}} position={{x: 2, y: 2, z: -1.5}} />
+
+          <Entity text={{value: "Amanda Nelson is an artist an illustrator, based in Southern California. When she's not making art in Monrovia, she can be found attending Corgi Beach Days. \n\n She is available for illustration, portraiture, and design work."}}
+            position={{x: 1.4, y: 1.5, z: -1}}
+            rotation={{x: 0, y: -40, z: 0}}/>
 
 
 
