@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       title: 'Animals in Space',
       subtitle: 'by Amanda Nelson',
-      aboutMe: "Amanda Nelson is an artist and illustrator, based in Southern California. When she's not making art she can be found attending Corgi Beach Days and petting other peoples' dogs. \n\n She is available for illustration, portraiture, and design work.",
+      aboutMe: "Amanda Nelson is an artist and illustrator, based in Southern California. When she's not making art she can be found attending Corgi Beach Days and petting other peoples' dogs. \n\n She is available for illustration, portraiture, and design work. \n\n You can find her on Instagram @sandmanalone.",
       xTileSize: 0.3,
       yTileSize: 0.25,
       trayHeight: 1.2,
